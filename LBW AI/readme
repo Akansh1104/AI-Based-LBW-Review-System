@@ -1,0 +1,73 @@
+# AI-Based LBW Review System (Mini Project)
+
+## 📌 Project Overview
+This project demonstrates an **AI-assisted Leg Before Wicket (LBW) review system** using computer vision and simple trajectory modeling.
+
+The system is designed for **academic demonstration** and follows the **actual LBW decision logic used in cricket**, focusing on clarity and explainability rather than full professional accuracy.
+
+---
+
+## 🏏 LBW Decision Logic (Cricket Rules)
+An LBW decision depends on answering **two key questions**:
+
+1. **Impact Line Check (Front View)**  
+   Did the ball hit the batsman **in line with the stumps**?
+
+2. **Wicket Collision Check (Side View)**  
+   Would the ball have **hit the stumps** if the pad was not there?
+
+👉 If **both conditions are satisfied**, the batsman is given **OUT**.
+
+---
+
+## 🧠 System Approach
+- Uses a **front-view video** of a cricket delivery
+- Tracks the ball using classical computer vision
+- Simulates a **side-view trajectory** (when side-view video is unavailable)
+- Visualizes the decision using **two simplified cricket-style diagrams**
+
+This approach is **honest, explainable, and suitable for a 6th Semester Mini Project**.
+
+---
+
+## 📊 Visualizations Used
+### 1️⃣ Front View – Impact Line
+- Shows the **stump line**
+- Marks the **exact impact point**
+- Clearly indicates **INLINE / OUTSIDE LINE**
+
+### 2️⃣ Side View – Trajectory to Stumps
+- Shows the **pitch**
+- Shows **three stumps**
+- Predicts whether the ball would **hit or miss the stumps**
+
+All visuals use **consistent colors and cricket terminology**.
+
+---
+
+## 📁 Project Structure
+LBW AI/
+├── Data/
+│ └── front_view.mp4
+├── Results/
+│ └── lbw_analysis.png
+├── src/
+│ ├── preprocess.py
+│ ├── ball_detection.py
+│ ├── tracking.py
+│ ├── trajectory.py
+│ ├── stump_logic.py
+│ ├── main.py # Standalone demo (optional)
+│ └── app.py # FINAL interactive dashboard
+├── README.md
+└── requirements.txt
+
+
+## ▶ How to Run the Project
+
+### Step 1: Install Dependencies
+```bash
+python -m pip install -r requirements.txt
+
+cd src  #path
+python -m streamlit run app.py
